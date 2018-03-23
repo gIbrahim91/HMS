@@ -49,7 +49,7 @@
       </JFXTextField>
       <ImageView fitHeight="50.0" fitWidth="49.0" layoutX="206.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/1892f7c2e454fa6fcd02276ebc3255ec.png" />
+            <Image url="@../img/searchicon.png" />
          </image>
       </ImageView>
       <Label fx:id="label_menu_option" layoutX="217.0" layoutY="66.0" prefHeight="26.0" prefWidth="141.0" text="Room Booking">
