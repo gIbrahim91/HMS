@@ -59,25 +59,34 @@
       </Label>
       <Pane layoutX="206.0" layoutY="97.0" prefHeight="503.0" prefWidth="776.0" style="-fx-background-color: #e3e3e3;">
          <children>
-            <JFXTextField layoutX="9.0" layoutY="48.0" prefHeight="27.0" prefWidth="297.0" promptText="Name" />
-            <JFXTextField layoutX="10.0" layoutY="95.0" prefHeight="27.0" prefWidth="293.0" promptText="Surname" />
-            <JFXTextField layoutX="10.0" layoutY="145.0" prefHeight="27.0" prefWidth="290.0" promptText="Email" />
-            <JFXTextField layoutX="9.0" layoutY="185.0" prefHeight="27.0" prefWidth="291.0" promptText="Mobile +44" />
-            <JFXComboBox layoutX="82.0" layoutY="245.0" promptText="1" />
-            <JFXComboBox layoutX="175.0" layoutY="246.0" promptText="JAN" />
-            <JFXComboBox layoutX="264.0" layoutY="247.0" promptText="2018" />
-            <Label layoutX="13.0" layoutY="252.0" text="In-Date" />
-            <Label layoutX="10.0" layoutY="329.0" text="Out-Date" />
-            <JFXComboBox layoutX="261.0" layoutY="324.0" promptText="2018" />
-            <JFXComboBox layoutX="172.0" layoutY="323.0" promptText="JAN" />
-            <JFXComboBox layoutX="79.0" layoutY="322.0" promptText="1" />
-            <JFXTextField layoutX="437.0" layoutY="48.0" prefHeight="27.0" prefWidth="240.0" promptText="No. of Persons" />
-            <JFXComboBox layoutX="438.0" layoutY="96.0" prefHeight="27.0" prefWidth="242.0" promptText="Room Type" />
-            <JFXButton fx:id="clear_booking_btn" buttonType="RAISED" layoutX="440.0" layoutY="411.0" prefHeight="53.0" prefWidth="103.0" style="-fx-background-color: #446CB3;" text="Clear" />
-            <JFXButton fx:id="done_booking_btn" buttonType="RAISED" layoutX="603.0" layoutY="411.0" prefHeight="53.0" prefWidth="103.0" style="-fx-background-color: #2ECC71;" text="Done" />
+            <JFXTextField fx:id="cust_name" layoutX="9.0" layoutY="48.0" prefHeight="27.0" prefWidth="297.0" promptText="Name" />
+            <JFXTextField fx:id="cust_surname" layoutX="10.0" layoutY="100.0" prefHeight="27.0" prefWidth="293.0" promptText="Surname" />
+            <JFXTextField fx:id="cust_email" layoutX="10.0" layoutY="153.0" prefHeight="27.0" prefWidth="290.0" promptText="Email" />
+            <JFXTextField fx:id="cust_mobile" layoutX="9.0" layoutY="208.0" prefHeight="27.0" prefWidth="291.0" promptText="Mobile +44" />
+            <JFXComboBox fx:id="checkin_day" layoutX="509.0" layoutY="158.0" promptText="Day" />
+            <JFXComboBox fx:id="checkin_month" layoutX="602.0" layoutY="159.0" promptText="JAN" />
+            <Label fx:id="in" layoutX="440.0" layoutY="165.0" text="In-Date" />
+            <JFXComboBox fx:id="checkin_year" layoutX="691.0" layoutY="160.0" promptText="2018" />
+            <Group layoutX="425.0" layoutY="-98.0">
+               <children>
+                  <Label layoutX="10.0" layoutY="329.0" text="Out-Date" />
+                  <JFXComboBox fx:id="checkout_day" layoutX="79.0" layoutY="322.0" promptText="Day" />
+                  <JFXComboBox fx:id="checkout_month" layoutX="172.0" layoutY="323.0" promptText="JAN" />
+                  <JFXComboBox fx:id="checkout_year" layoutX="261.0" layoutY="324.0" promptText="2018" />
+               </children>
+            </Group>
+            <JFXTextField fx:id="noofperson" layoutX="437.0" layoutY="48.0" prefHeight="27.0" prefWidth="240.0" promptText="No. of Persons" />
+            <JFXComboBox fx:id="roomtype" layoutX="438.0" layoutY="96.0" prefHeight="27.0" prefWidth="242.0" promptText="Room Type" />
+            <Group layoutX="40.0" layoutY="10.0">
+               <children>
+                  <JFXButton fx:id="clear_booking_btn" buttonType="RAISED" layoutX="451.0" layoutY="411.0" onAction="#clearForm" prefHeight="53.0" prefWidth="103.0" style="-fx-background-color: #446CB3;" text="Clear" />
+                  <JFXButton fx:id="done_booking_btn" buttonType="RAISED" layoutX="603.0" layoutY="411.0" prefHeight="53.0" prefWidth="103.0" style="-fx-background-color: #2ECC71;" text="Done" />
+               </children>
+            </Group>
+            <JFXTextArea fx:id="cust_address" layoutX="10.0" layoutY="272.0" prefHeight="144.0" prefWidth="294.0" promptText="Address" />
          </children>
       </Pane>
-      <JFXButton fx:id="logout_btn" defaultButton="true" layoutY="349.0" opacity="0.63" prefHeight="58.0" prefWidth="206.0" text="Logout" textFill="WHITE">
+      <JFXButton fx:id="logout_btn" defaultButton="true" layoutY="349.0" onAction="#userLogout" opacity="0.63" prefHeight="58.0" prefWidth="206.0" text="Logout" textFill="WHITE">
          <font>
             <Font name="Ebrima" size="23.0" />
          </font>
