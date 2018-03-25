@@ -101,6 +101,7 @@ public class MainScene implements Initializable {
         window.show();
     }
 
+    //logout function
     public void userLogout() {
         logout_btn.setOnAction(e -> {
             //button should put up to confirm logging out
