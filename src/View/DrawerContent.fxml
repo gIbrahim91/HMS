@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="170.0" style="-fx-background-color: #7b1fa2;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.DrawerContent">
+   <children>
+      <AnchorPane prefHeight="190.0" prefWidth="170.0">
+         <children>
+            <ImageView fitHeight="138.0" fitWidth="109.0" layoutX="34.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/whiteflame.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <JFXButton accessibleText="new_bookings" defaultButton="true" prefHeight="69.0" prefWidth="221.0" text="New Booking" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="view_bookings_btn" accessibleText="view_bookings" defaultButton="true" prefHeight="69.0" prefWidth="221.0" text="View Bookings" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="logout_btn1" defaultButton="true" onAction="#userLogout" prefHeight="69.0" prefWidth="221.0" text="Logout" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+   </children>
+</VBox>
