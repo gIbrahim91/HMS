@@ -44,21 +44,24 @@ public class LoginScene {
         }
 
         login_button.setOnAction(e -> {
-            if (username_input.getText().equals(username) && password_input.getText().equals(password)) {
+            if ((username_input.getText().equals(username) && username.isEmpty()==false) &&
+                    (password_input.getText().equals(password) && password_input.getText().isEmpty()==false)) {
                 View.MainScene ms = new MainScene();
                 username_input.getScene().getWindow().hide();
+                System.out.println(username+" "+password_input);
                 try {
                     ms.openMainScreen();
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
-            } else if (username_input.getText().isEmpty() && password_input.getText().isEmpty()) {
+            }else if (username_input.getText().isEmpty() && password_input.getText().isEmpty()) {
                 wrong_login_info.setText("ENTER username and password");
             } else {
                 wrong_login_info.setText("WRONG username and password");
             }
         });
 
+        connection.close();
     }
 
 }

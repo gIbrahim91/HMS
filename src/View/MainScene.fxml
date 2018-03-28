@@ -10,6 +10,8 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="979.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainScene">
@@ -22,14 +24,14 @@
                   <JFXTextField fx:id="cust_surname" focusColor="#7b1fa2" layoutX="415.0" layoutY="104.0" prefHeight="27.0" prefWidth="292.0" promptText="Surname" />
                   <JFXTextField fx:id="cust_email" focusColor="#7b1fa2" layoutX="26.0" layoutY="154.0" prefHeight="27.0" prefWidth="682.0" promptText="Email" />
                   <JFXComboBox fx:id="cust_title" focusColor="#7b1fa2" layoutX="26.0" layoutY="104.0" promptText="Title" />
-                  <JFXTextField fx:id="cust_mobile" focusColor="#7b1fa2" layoutX="28.0" layoutY="206.0" prefHeight="27.0" prefWidth="681.0" promptText="Mobile (+44)" />
+                  <JFXTextField fx:id="cust_mobilenum" focusColor="#7b1fa2" layoutX="28.0" layoutY="206.0" prefHeight="27.0" prefWidth="681.0" promptText="Mobile (+44)" />
                   <JFXTextField fx:id="cust_house_number" focusColor="#7b1fa2" layoutX="29.0" layoutY="256.0" prefHeight="27.0" prefWidth="90.0" promptText="House No." />
                   <JFXTextField fx:id="cust_street" focusColor="#7b1fa2" layoutX="29.0" layoutY="306.0" prefHeight="27.0" prefWidth="220.0" promptText="Street" />
                   <JFXTextField fx:id="cust_city" focusColor="#7b1fa2" layoutX="29.0" layoutY="356.0" prefHeight="27.0" prefWidth="220.0" promptText="City" />
-                  <JFXTextField fx:id="cust_postcode" focusColor="#7b1fa2" layoutX="270.0" layoutY="356.0" prefHeight="27.0" prefWidth="90.0" promptText="Poscode" />
+                  <JFXTextField fx:id="cust_postcode" focusColor="#7b1fa2" layoutX="275.0" layoutY="356.0" prefHeight="27.0" prefWidth="90.0" promptText="Poscode" />
                   <JFXTextField fx:id="noofpersons" focusColor="#7b1fa2" layoutX="30.0" layoutY="410.0" prefHeight="27.0" prefWidth="330.0" promptText="No. of Persons" />
                   <JFXDatePicker fx:id="checkin" defaultColor="#7b1fa2" layoutX="31.0" layoutY="517.0" prefHeight="27.0" prefWidth="336.0" promptText="Check-In Date" />
-                  <JFXDatePicker fx:id="checkout" defaultColor="#7b1fa2" layoutX="384.0" layoutY="517.0" prefHeight="27.0" prefWidth="336.0" promptText="Check-Out Date" />
+                  <JFXDatePicker fx:id="checkout" defaultColor="#7b1fa2" layoutX="387.0" layoutY="517.0" prefHeight="27.0" prefWidth="336.0" promptText="Check-Out Date" />
                   <JFXButton fx:id="clear_booking_btn" layoutX="32.0" layoutY="635.0" onAction="#clearForm" prefHeight="52.0" prefWidth="301.0" style="-fx-background-color: #EA80FC;" text="Clear" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
@@ -52,6 +54,25 @@
                         <Font name="Ebrima" size="36.0" />
                      </font>
                   </Label>
+                  <Label fx:id="booking_form_empty1" layoutX="109.0" layoutY="115.0" textFill="RED" />
+                  <Label fx:id="booking_form_empty2" layoutX="403.0" layoutY="115.0">
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#ee0606" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </Label>
+                  <Label fx:id="booking_form_empty3" layoutX="716.0" layoutY="115.0" textFill="RED" />
+                  <Label fx:id="booking_form_empty4" layoutX="717.0" layoutY="165.0" textFill="RED" />
+                  <Label fx:id="booking_form_empty5" layoutX="719.0" layoutY="217.0" textFill="RED" />
+                  <Label fx:id="booking_form_empty6" layoutX="128.0" layoutY="267.0" textFill="RED" />
+                  <Label fx:id="booking_form_empty7" layoutX="258.0" layoutY="317.0" textFill="RED" />
+                  <Label fx:id="booking_form_empty8" layoutX="259.0" layoutY="367.0" textFill="RED" />
+                  <Label fx:id="booking_form_empty9" layoutX="374.0" layoutY="367.0" textFill="RED" />
+                  <Label fx:id="booking_form_empty10" layoutX="371.0" layoutY="421.0" textFill="RED" />
                </children>
             </AnchorPane>
          </center>

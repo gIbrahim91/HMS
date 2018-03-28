@@ -12,10 +12,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 
+import javax.xml.soap.Text;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -99,6 +102,39 @@ public class MainScene implements Initializable {
     @FXML
     private AnchorPane anchor_pane_content;
 
+    @FXML
+    private Label booking_form_empty1;
+
+    @FXML
+    private Label booking_form_empty2;
+
+    @FXML
+    private Label booking_form_empty3;
+
+    @FXML
+    private Label booking_form_empty4;
+
+    @FXML
+    private Label booking_form_empty5;
+
+    @FXML
+    private Label booking_form_empty6;
+
+    @FXML
+    private Label booking_form_empty7;
+
+    @FXML
+    private Label booking_form_empty8;
+
+    @FXML
+    private Label booking_form_empty9;
+
+    @FXML
+    private Label booking_form_empty10;
+
+    @FXML
+    private JFXTextField cust_mobilenum;
+
     public void openMainScreen() throws IOException {
         Parent root2 = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
         Stage window = new Stage();
@@ -110,12 +146,23 @@ public class MainScene implements Initializable {
 
     public void clearForm(){
             cust_name.setText("");
+            cust_name.setUnFocusColor(Paint.valueOf("#4d4d4d"));
             cust_surname.setText("");
+            cust_surname.setUnFocusColor(Paint.valueOf("#4d4d4d"));
             cust_email.setText("");
-            cust_mobile.setText("");
+            cust_email.setUnFocusColor(Paint.valueOf("#4d4d4d"));
+            cust_mobilenum.setText("");
+            cust_mobilenum.setUnFocusColor(Paint.valueOf("#4d4d4d"));
             cust_house_number.setText("");
+            cust_house_number.setUnFocusColor(Paint.valueOf("#4d4d4d"));
             cust_city.setText("");
+            cust_city.setUnFocusColor(Paint.valueOf("#4d4d4d"));
             noofpersons.setText("");
+            noofpersons.setUnFocusColor(Paint.valueOf("#4d4d4d"));
+            cust_postcode.setText("");
+            cust_postcode.setUnFocusColor(Paint.valueOf("#4d4d4d"));
+            cust_street.setText("");
+            cust_street.setUnFocusColor(Paint.valueOf("#4d4d4d"));
             cust_title.getItems().clear();
             roomtype.getItems().clear();
             checkin.setValue(null);
@@ -124,6 +171,17 @@ public class MainScene implements Initializable {
             loadNameTitle();
             roomtype.setPromptText("Room Type");
             cust_title.setPromptText("Title");
+            booking_form_empty1.setText("");
+            booking_form_empty2.setText("");
+            booking_form_empty3.setText("");
+            booking_form_empty4.setText("");
+            booking_form_empty5.setText("");
+            booking_form_empty6.setText("");
+            booking_form_empty7.setText("");
+            booking_form_empty8.setText("");
+            booking_form_empty9.setText("");
+            booking_form_empty10.setText("");
+
     }
 
     public void loadRoomType(){
@@ -140,9 +198,68 @@ public class MainScene implements Initializable {
         cust_title.getItems().add("Dr.");
     }
 
+    public void emptyFields(){
+        ArrayList<JFXTextField> textfieldslist = new ArrayList<JFXTextField>();
+        textfieldslist.add(cust_name);
+        textfieldslist.add(cust_surname);
+        textfieldslist.add(cust_email);
+        textfieldslist.add(cust_house_number);
+        textfieldslist.add(cust_street);
+        textfieldslist.add(cust_city);
+        textfieldslist.add(cust_postcode);
+        textfieldslist.add(noofpersons);
+        textfieldslist.add(cust_mobilenum);
+
+        for (JFXTextField txt : textfieldslist) {
+            if(txt.getText().isEmpty()){
+
+                if(txt.equals(cust_name)){
+                    booking_form_empty2.setText("*");
+                    cust_name.setUnFocusColor(Paint.valueOf("#EF5350"));
+                }
+
+                if(txt.equals(cust_surname)){
+                    booking_form_empty3.setText("*");
+                    cust_surname.setUnFocusColor(Paint.valueOf("#EF5350"));
+                }
+
+                if(txt.equals(cust_email)){
+                    booking_form_empty4.setText("*");
+                    cust_email.setUnFocusColor(Paint.valueOf("#EF5350"));
+                }
+
+                if(txt.equals(cust_mobilenum)){
+                    booking_form_empty5.setText("*");
+                    cust_mobilenum.setUnFocusColor(Paint.valueOf("#EF5350"));
+                }
+
+                if(txt.equals(cust_house_number)){
+                    booking_form_empty6.setText("*");
+                    cust_house_number.setUnFocusColor(Paint.valueOf("#EF5350"));
+                }
+                if(txt.equals(cust_street)){
+                    booking_form_empty7.setText("*");
+                    cust_street.setUnFocusColor(Paint.valueOf("#EF5350"));
+                }
+                if(txt.equals(cust_city)){
+                    booking_form_empty8.setText("*");
+                    cust_city.setUnFocusColor(Paint.valueOf("#EF5350"));
+                }
+                if(txt.equals(cust_postcode)){
+                    booking_form_empty9.setText("*");
+                    cust_postcode.setUnFocusColor(Paint.valueOf("#EF5350"));
+                }
+                if(txt.equals(noofpersons)){
+                    booking_form_empty10.setText("*");
+                    noofpersons.setUnFocusColor(Paint.valueOf("#EF5350"));
+                }
+            }
+        }
+    }
+
     public void completeBooking(){
         complete_booking_btn.setOnAction(event -> {
-
+            emptyFields();
         });
     }
 
