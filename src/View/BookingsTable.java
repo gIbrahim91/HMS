@@ -36,16 +36,16 @@ public class BookingsTable implements Initializable {
     private Label current_option_label;
 
     @FXML
-    private BorderPane main_content;
+    private JFXButton logout_btn;
 
     @FXML
-    private JFXButton logout_btn;
+    private BorderPane main_content_bookings;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         try {
-
             VBox vbox = FXMLLoader.load(getClass().getResource("DrawerContent.fxml"));
             drawer.setSidePane(vbox);
 
@@ -55,9 +55,8 @@ public class BookingsTable implements Initializable {
                         switch (node.getAccessibleText()){
                             case "new_bookings" :
                                 try {
-                                    main_content.getChildren().clear();
                                     AnchorPane pane = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
-                                    main_content.getChildren().setAll(pane);
+                                    main_content_bookings.getChildren().setAll(pane);
                                     break;
                                 } catch (IOException e1) {
                                     e1.printStackTrace();
@@ -81,7 +80,6 @@ public class BookingsTable implements Initializable {
         } catch (IOException e) {
             Logger.getLogger(MainScene.class.getName()).log(Level.SEVERE, null, e);
         }
-
 
     }
 }
